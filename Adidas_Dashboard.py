@@ -42,7 +42,7 @@ sales = get_data()
 #converting column names to lowercase
 sales.columns = [s.strip().lower().replace(' ','_') for s in sales.columns]
 #converting invoice date to date/time format
-sales['invoice_date'] = sales['invoice_date'].astype('datetime64')
+sales['invoice_date'] = sales['invoice_date'].astype('datetime64[ns]')
 
 
 #2020 total sales
