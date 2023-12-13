@@ -140,7 +140,10 @@ with st.container():
 
 st.markdown('---')
 
-#most valuable category
+with st.container():
+    st.subheader('Total Sales Over Time')
+    st.plotly_chart(px.line(sales.groupby('invoice_date')['total_sales'].sum().reset_index(),x='invoice_date',y='total_sales'),use_container_width=True)
+
 with st.container():
     col1,col2 = st.columns(spec=2,gap='medium')
     with col1:
